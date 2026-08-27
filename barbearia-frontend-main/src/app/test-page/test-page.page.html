@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Página de Teste - Services</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">ID (para get/update/delete)</ion-label>
+      <ion-input type="number" [(ngModel)]="idInput"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input [(ngModel)]="form.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input [(ngModel)]="form.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Senha</ion-label>
+      <ion-input [(ngModel)]="form.senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Celular</ion-label>
+      <ion-input [(ngModel)]="form.celular"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="getAll()">Get Todos</ion-button>
+  <ion-button expand="full" (click)="getById()">Get por ID</ion-button>
+  <ion-button expand="full" (click)="create()">Criar</ion-button>
+  <ion-button expand="full" (click)="update()">Atualizar</ion-button>
+  <ion-button expand="full" color="danger" (click)="delete()">Deletar</ion-button>
+
+  <h3>Resultado</h3>
+  <pre>{{ result | json }}</pre>
+
+  <h3>Clientes (lista)</h3>
+  <pre>{{ clientes | json }}</pre>
+</ion-content>
